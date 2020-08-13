@@ -1,7 +1,16 @@
+import jquery from 'jquery';
+// import 'bootstrap';
+
 import Vue from 'vue'
 import VueMeta from 'vue-meta'
 import PortalVue from 'portal-vue'
 import { InertiaApp } from '@inertiajs/inertia-vue'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+window.$ = jquery;
+
+import 'bootstrap';
 
 Vue.config.productionTip = false
 Vue.mixin({ methods: { route: window.route } })

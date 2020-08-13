@@ -1,67 +1,60 @@
 <template>
-    
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <h1>Testando InertiaJS</h1>
-    <h3>Contador Simples</h3>
-    <contador />
-
-    <h2>Listagem</h2>
-    <ul id="example-1">
-      <tr v-for="user in pets" :key="user.id" class="hover:bg-gray-100 focus-within:bg-gray-100">
-        <td class="border-t">
-          <inertia-link
-            class="px-6 py-4 flex items-center focus:text-indigo-500"
-            :href="route('pets.key', user.id)"
-          >
-            <icon
-              v-if="user.id"
-              name="trash"
-              class="flex-shrink-0 w-3 h-3 fill-gray-400 ml-2"
-            />
-            {{user.id}} - {{user.name }}
-          </inertia-link>
-        </td>
-      </tr>
-    </ul>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+            Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >Dropdown</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
 </template>
 
-<!-- Using the `scoped` attribute -->
-<style scoped>
-h1 {
-  font-size: 2em;
-}
-
-h3 {
-  font-size: 1.4em;
-}
-
-#main {
-  width: 960px;
-  margin: 0 auto;
-}
-</style>
-
 <script>
-import Contador from "@/Shared/Contador";
-
 export default {
-  metaInfo: {
-    title: "Home",
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "olhala", content: "Olha só, bunito." },
-    ],
-  },
-  components: {
-    Contador,
-  },
-  props: {
-    pets: [],
-  },
-  mounted() {
-    console.log(this.pets);
-  },
-};
+    
+}
 </script>

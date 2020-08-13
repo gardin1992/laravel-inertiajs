@@ -1,5 +1,8 @@
 <template>
   <div id="main">
+
+    <navbar />
+
     <inertia-link href="/">Home</inertia-link>
     <inertia-link href="/contador">Contador</inertia-link>
     <inertia-link href="/pets">Pets</inertia-link>
@@ -30,24 +33,15 @@
   </div>
 </template>
 
-<!-- Using the `scoped` attribute -->
-<style scoped>
-h1 {
-  font-size: 2em;
-}
-
-h3 {
-  font-size: 1.4em;
-}
-
-#main {
-  width: 960px;
-  margin: 0 auto;
-}
-</style>
-
 <script>
 import Contador from "@/Shared/Contador";
+import Navbar from "@/Shared/Navbar";
+
+const components = {
+  Navbar,
+  Contador
+}
+
 export default {
   metaInfo: {
     title: "Home",
@@ -57,9 +51,7 @@ export default {
       { name: "olhala", content: "Olha só, bunito." },
     ],
   },
-  components: {
-    Contador,
-  },
+  components,
   props: {
     posts: [],
     event: [],
