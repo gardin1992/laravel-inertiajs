@@ -16,7 +16,7 @@ class PostsController extends Controller
         $event->keywords = $post->name;
         $event->author = $post->author;
         $event->title = $post->title;
-        $event->image = $post->url_image;
+        $event->image = 'https://via.placeholder.com/600x315';
         $event->url = '/pets/' . $post->id;
 
         return Inertia::render('Posts/Key', [
