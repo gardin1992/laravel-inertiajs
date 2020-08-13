@@ -10,10 +10,9 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Validation\Rule;
 use Inertia\Inertia;
 
-class UsersController extends Controller
+class PetsController extends Controller
 {
-    public function index()
-    {
+    public function index() {
         return Inertia::render('Users/Index', [
             'filters' => Request::all('search', 'role', 'trashed'),
             'users' => Auth::user()->account->users()
