@@ -4,6 +4,22 @@ namespace App\Http\Controllers;
 
 use Inertia\Inertia;
 
+
+class Event {
+
+    public $description = "";
+    public $keywords = "";
+    public $language = "";
+    public $author = "";
+    public $robots = "";
+
+    public $type = "";
+    public $title = "";
+    public $image = "";
+    public $url = "";
+    public $site_name = "";
+}
+
 class PetsController extends Controller
 {
     public function index() {
@@ -16,8 +32,12 @@ class PetsController extends Controller
 
         $pet = \App\Pet::findOrFail($id);
 
-        echo 'pegar item  <br>';
+        $event = new Event();
+        $event->description = $pet->name;
 
-        return Inertia::share('Pets/Key', $pet);
+        return Inertia::render('Pets/Key', [
+            'pet' => $pet,
+            'event' => $event
+        ]);
     }
 }

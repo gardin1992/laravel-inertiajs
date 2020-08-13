@@ -15,7 +15,7 @@
         <td class="border-t">
           <inertia-link
             class="px-6 py-4 flex items-center focus:text-indigo-500"
-            :href="route('pets.key', user.id)"
+            :href="'/pets/' + user.id"
           >
             <icon
               v-if="user.id"

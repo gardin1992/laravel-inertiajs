@@ -6,27 +6,9 @@
     <inertia-link href="/sobre">Sobre</inertia-link>
 
     <h1>Testando InertiaJS</h1>
-    <h3>Contador Simples</h3>
-    <contador />
 
-    <h2>Listagem</h2>
-    <ul id="example-1">
-      <tr v-for="user in pets" :key="user.id" class="hover:bg-gray-100 focus-within:bg-gray-100">
-        <td class="border-t">
-          <inertia-link
-            class="px-6 py-4 flex items-center focus:text-indigo-500"
-            :href="route('pets.key', user.id)"
-          >
-            <icon
-              v-if="user.id"
-              name="trash"
-              class="flex-shrink-0 w-3 h-3 fill-gray-400 ml-2"
-            />
-            {{user.id}} - {{user.name }}
-          </inertia-link>
-        </td>
-      </tr>
-    </ul>
+    <h2>Item</h2>
+    {{pet.id}} - {{pet.name }}
   </div>
 </template>
 
@@ -47,8 +29,6 @@ h3 {
 </style>
 
 <script>
-import Contador from "@/Shared/Contador";
-
 export default {
   metaInfo: {
     title: "Home",
@@ -59,13 +39,12 @@ export default {
     ],
   },
   components: {
-    Contador,
   },
   props: {
-    pets: [],
+    pet: Object,
   },
   mounted() {
-    console.log(this.pets);
+    this.metaInfo.title = this.pet.name;
   },
 };
 </script>
