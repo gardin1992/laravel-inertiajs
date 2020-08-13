@@ -2,13 +2,13 @@
   <div id="main">
     <inertia-link href="/">Home</inertia-link>
     <inertia-link href="/contador">Contador</inertia-link>
-    <inertia-link href="/pets">Pets</inertia-link>
+    <inertia-link href="/post">post</inertia-link>
     <inertia-link href="/sobre">Sobre</inertia-link>
 
     <h1>Testando InertiaJS</h1>
 
     <h2>Item</h2>
-    {{pet.id}} - {{pet.name }}
+    {{post.id}} - {{post.name }}
   </div>
 </template>
 
@@ -31,20 +31,14 @@ h3 {
 <script>
 export default {
   metaInfo: {
-    title: "Home",
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "olhala", content: "Olha só, bunito." },
-    ],
   },
   components: {
   },
   props: {
-    pet: Object,
+    post: Object,
   },
   mounted() {
-    this.metaInfo.title = this.pet.name;
+    this.metaInfo.title = this.post.name;
   },
 };
 </script>

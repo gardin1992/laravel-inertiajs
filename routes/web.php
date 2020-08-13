@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 // Home
 Route::get('/')->name('home')->uses('HomeController@showIndex');
 
-Route::get('/pets/{id}')->name('pets.key')->uses('PetsController@key');
+Route::get('/posts/{id}')->name('posts.key')->uses('PostsController@key');
 // :href="route('pets.key', user.id)"

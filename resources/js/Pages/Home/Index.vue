@@ -11,18 +11,18 @@
 
     <h2>Listagem</h2>
     <ul id="example-1">
-      <tr v-for="user in pets" :key="user.id" class="hover:bg-gray-100 focus-within:bg-gray-100">
+      <tr v-for="user in posts" :key="user.id" class="hover:bg-gray-100 focus-within:bg-gray-100">
         <td class="border-t">
           <inertia-link
             class="px-6 py-4 flex items-center focus:text-indigo-500"
-            :href="'/pets/' + user.id"
+            :href="'/posts/' + user.id"
           >
             <icon
               v-if="user.id"
               name="trash"
               class="flex-shrink-0 w-3 h-3 fill-gray-400 ml-2"
             />
-            {{user.id}} - {{user.name }}
+            {{user.id}} - {{user.title }}
           </inertia-link>
         </td>
       </tr>
@@ -61,11 +61,11 @@ export default {
     Contador,
   },
   props: {
-    pets: [],
+    posts: [],
     event: [],
   },
   mounted() {
-    console.log(this.pets);
+    console.log(this.posts);
   },
 };
 </script>
