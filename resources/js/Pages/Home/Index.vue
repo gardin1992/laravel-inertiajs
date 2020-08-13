@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div id="main">
     <h1>Testando InertiaJS</h1>
-    
+
     <h3>Contador Simples</h3>
     <contador />
 
@@ -10,6 +10,22 @@
   </div>
 </template>
 
+<!-- Using the `scoped` attribute -->
+<style scoped>
+h1 {
+  font-size: 2.0em;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+#main {
+  width: 960px;
+  margin: 0 auto;
+}
+</style>
+
 <script>
 import LoadingButton from "@/Shared/LoadingButton";
 import Index from "@/Pages/Users/Index";
@@ -17,8 +33,8 @@ import Contador from "@/Shared/Contador";
 import ListAll from "@/Shared/ListAll";
 
 export default {
-  metaInfo: { 
-    title: "Testando InertiaJS"
+  metaInfo: {
+    title: "Testando InertiaJS",
   },
   components: {
     LoadingButton,
