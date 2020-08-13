@@ -48,6 +48,7 @@ h3 {
 
 <script>
 import Contador from "@/Shared/Contador";
+
 export default {
   metaInfo: {
     title: "Home",
@@ -62,7 +63,6 @@ export default {
   },
   props: {
     pets: [],
-    event: [],
   },
   mounted() {
     console.log(this.pets);

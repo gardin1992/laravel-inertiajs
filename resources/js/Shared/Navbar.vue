@@ -1,9 +1,5 @@
 <template>
-  <div id="main">
-    <inertia-link href="/">Home</inertia-link>
-    <inertia-link href="/contador">Contador</inertia-link>
-    <inertia-link href="/pets">Pets</inertia-link>
-    <inertia-link href="/sobre">Sobre</inertia-link>
+    
 
     <h1>Testando InertiaJS</h1>
     <h3>Contador Simples</h3>
@@ -48,6 +44,7 @@ h3 {
 
 <script>
 import Contador from "@/Shared/Contador";
+
 export default {
   metaInfo: {
     title: "Home",
@@ -62,7 +59,6 @@ export default {
   },
   props: {
     pets: [],
-    event: [],
   },
   mounted() {
     console.log(this.pets);

@@ -9,7 +9,6 @@
 
 <script>
 export default {
-  metaInfo: { title: "Login" },
   components: {},
   props: {
     errors: Object,

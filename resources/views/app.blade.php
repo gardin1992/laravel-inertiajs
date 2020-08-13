@@ -16,24 +16,28 @@
     <script src="{{ mix('/js/app.js') }}" defer></script>
 
     <title>Testando InertiaJS</title>
-    <meta name="description" content="Testando InertiaJS - Testando o Laravel Mais InertiaJS" />
-    <meta name="keywords" content="laravel, inertiaJs, testando" />
+
+    @if(isset($page['props']['event']))
+
+    <meta name="description" content="{{ $page['props']['event']->description }}" />
+    <meta name="keywords" content="{{ $page['props']['event']->keywords }}" />
     <meta name="robots" content="all" />
-    <meta name="language" content="pt-br" />
-    <meta name="author" content="João Antonio Gardin Vieira" />
+    <meta name="language" content="{{ $page['props']['event']->language }}" />
+    <meta name="author" content="{{ $page['props']['event']->author }}" />
 
-    <meta property="og:title" content="Testando InertiaJS" />
-    <meta property="og:type" content="article" />
-    <meta property="og:description" content="Testando InertiaJS - Testando o Laravel Mais InertiaJS" />
-    <meta property="og:image" content="https://pacific-retreat-74728.herokuapp.com/imageteste.png" />
-    <meta property="og:url" content="https://pacific-retreat-74728.herokuapp.com/" />
-    <meta property="og:site_name" content="50 dicas " />
+    <meta property="og:type" content="{{ $page['props']['event']->type }}" />
+    <meta property="og:title" content="{{ $page['props']['event']->title }}" />
+    <meta property="og:description" content="{{ $page['props']['event']->description }}" />
+    <meta property="og:image" content="{{ $page['props']['event']->image }}" />
+    <meta property="og:url" content="{{ $page['props']['event']->url }}" />
+    <meta property="og:site_name" content="{{ $page['props']['event']->site_name }}" />
 
-    <meta name="twitter:url" content="https://pacific-retreat-74728.herokuapp.com/">
-    <meta name="twitter:title" content="Testando InertiaJS">
-    <meta name="twitter:description" content="Testando InertiaJS - Testando o Laravel Mais InertiaJS">
-    <meta name="twitter:image" content="https://pacific-retreat-74728.herokuapp.com/imageteste.png">
-    
+    <meta name="twitter:url" content="{{ $page['props']['event']->url }}">
+    <meta name="twitter:title" content="{{ $page['props']['event']->title }}">
+    <meta name="twitter:description" content="{{ $page['props']['event']->description }}">
+    <meta name="twitter:image" content="{{ $page['props']['event']->image }}">
+    @endif
+
     @routes
 </head>
 
