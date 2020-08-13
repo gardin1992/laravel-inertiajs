@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="h-full bg-gray-200">
 <head>
+    <meta name="google-site-verification" content="YaB_jTNZLF2t2QpnlxClsRe4wPNErPKLIck4NzGXtqE" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
