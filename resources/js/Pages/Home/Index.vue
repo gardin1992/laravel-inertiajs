@@ -1,9 +1,11 @@
 <template>
   <div>
-    <h1>Hello World! Laravel + Vue + InertiaJs</h1>
-    <loading-button :loading="sending" class="btn-indigo" type="submit">Login</loading-button>
+    <h1>Testando InertiaJS</h1>
+    
+    <h3>Contador Simples</h3>
     <contador />
-    <index />
+
+    <h3>Listagem de dados</h3>
     <list-all />
   </div>
 </template>
@@ -15,7 +17,9 @@ import Contador from "@/Shared/Contador";
 import ListAll from "@/Shared/ListAll";
 
 export default {
-  metaInfo: { title: "Login" },
+  metaInfo: { 
+    title: "Testando InertiaJS"
+  },
   components: {
     LoadingButton,
     Index,
