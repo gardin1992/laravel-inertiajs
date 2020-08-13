@@ -5,9 +5,12 @@
     <inertia-link href="/post">post</inertia-link>
     <inertia-link href="/sobre">Sobre</inertia-link>
 
-    <h1>Testando InertiaJS</h1>
-
-    <h2>Item</h2>
+    <h1>Titulo: {{ post.title }}</h1>
+    <div>
+      {{ post.description }} -
+      <small>{{ post.author }}</small>
+    </div>
+    <div>{{ post.text}}</div>
     {{post.id}} - {{post.name }}
   </div>
 </template>
@@ -30,10 +33,8 @@ h3 {
 
 <script>
 export default {
-  metaInfo: {
-  },
-  components: {
-  },
+  metaInfo: {},
+  components: {},
   props: {
     post: Object,
   },
