@@ -23,6 +23,7 @@ let app = document.getElementById('app')
 new Vue({
   metaInfo() {
     return {
+      title: 'Testando InertiaJS',
       titleTemplate: (title) => title ? `${title} - Testando InertiaJS` : 'Testando InertiaJS',
       meta: [
         { name: 'description', content: 'Testando e implemtando SPA com InertiaJS, Vue e Laravel.' },

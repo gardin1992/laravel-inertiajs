@@ -14,7 +14,10 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.startsWith" defer></script>
 
     <script src="{{ mix('/js/app.js') }}" defer></script>
+    <title>Testando InertiaJS</title>
 
+    <?php
+    /*
     @if(isset($page['props']['event']))
 
     <meta name="description" content="{{ $page['props']['event']->description }}" />
@@ -35,7 +38,8 @@
     <meta name="twitter:description" content="{{ $page['props']['event']->description }}">
     <meta name="twitter:image" content="{{ $page['props']['event']->image }}">
     @endif
-
+    */ 
+    ?>
     @routes
 </head>
 
