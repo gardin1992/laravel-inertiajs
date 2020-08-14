@@ -25,11 +25,22 @@ new Vue({
     return {
       titleTemplate: (title) => title ? `${title} - Testando InertiaJS` : 'Testando InertiaJS',
       meta: [
-        { name: 'description', content: 'Epiloge is about connecting in your field of interest. Our vision is to help people share their knowledge, work, projects, papers and ideas and build their network through what they do rather where they live, study or work.' },
-        { property: 'og:title', content: "Epiloge - Build your network in your field of interest" },
-        { property: 'og:site_name', content: 'Epiloge' },
+        { name: 'description', content: 'Testando e implemtando SPA com InertiaJS, Vue e Laravel.' },
+        { name: 'robots', content: 'index,follow' },
+
+        // facebook
         { property: 'og:type', content: 'website' },
-        { name: 'robots', content: 'index,follow' }
+        { property: 'og:title', content: "Testando InertiaJS" },
+        { property: 'og:description', content: "Testando InertiaJS" },
+        { property: 'og:image', content: "Testando InertiaJS" },
+        { property: 'og:url', content: "Testando InertiaJS" },
+        { property: 'og:site_name', content: 'Testando InertiaJS' },
+
+        // twitter
+        { name: 'twitter:url', content: 'website' },
+        { name: 'twitter:title', content: "Testando InertiaJS" },
+        { name: 'twitter:description', content: "Testando InertiaJS" },
+        { name: 'twitter:image', content: "Testando InertiaJS" },
       ]
     }
   },

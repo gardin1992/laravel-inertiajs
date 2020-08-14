@@ -24,7 +24,6 @@ class PlaceholdersController extends Controller
 
         return Inertia::render('Placeholder/Key', [
             'id' => $id,
-            'event' => $event
         ]);
     }
 }
