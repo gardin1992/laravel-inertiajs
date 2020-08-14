@@ -19,4 +19,8 @@ class HomeController extends Controller
             'event' => $event
         ]);
     }
+
+    public function contador() {
+        return Inertia::render('Home/Contador');
+    }
 }

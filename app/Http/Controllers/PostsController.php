@@ -8,7 +8,7 @@ use Inertia\Inertia;
 class PostsController extends Controller
 {
     public function index() {
-        $posts = \App\Post::all()->toArray();
+        $posts = \App\Post::all();
 
         $event = new \App\Event();
         $event->description = "listagem das postagems";

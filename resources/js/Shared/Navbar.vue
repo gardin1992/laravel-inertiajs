@@ -27,6 +27,9 @@
         <li class="nav-item">
           <inertia-link class="nav-link" href="/posts">Postagens</inertia-link>
         </li>
+        <li class="nav-item">
+          <inertia-link class="nav-link" href="/placeholders">Placeholders</inertia-link>
+        </li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
