@@ -15,9 +15,7 @@
 
     <script src="{{ mix('/js/app.js') }}" defer></script>
 
-    <title>Testando InertiaJS</title>
-
-    @if(isset($page['props']['event']))
+    @if(isset($page['props']['event']) && empty($page['props']['event']))
 
     <meta name="description" content="{{ $page['props']['event']->description }}" />
     <meta name="keywords" content="{{ $page['props']['event']->keywords }}" />

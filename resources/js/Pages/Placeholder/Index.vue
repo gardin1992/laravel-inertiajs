@@ -12,7 +12,7 @@
             <td class="border-t">
               <inertia-link
                 class="px-6 py-4 flex items-center focus:text-indigo-500"
-                :href="'/posts/' + user.id"
+                :href="'/placeholders/' + user.id"
               >
                 <icon v-if="user.id" name="trash" class="flex-shrink-0 w-3 h-3 fill-gray-400 ml-2" />
                 {{user.id}} - {{user.title }}

@@ -21,13 +21,21 @@ const components = {
 export default {
   metaInfo() {
     return {
-      title: `${this.userData.name} - Epiloge`,
-    };
+      title: this.metaTag.title,
+    }
   },
   data() {
     return {
-      userData: {
-        name: 'KSKSK'
+      metaTag: {
+        title: "",
+        description: "",
+        image: "",
+        url: "",
+        site_name: "",
+        meta: [
+          { charset: "utf-8" },
+          { name: "viewport", content: "width=device-width, initial-scale=1" },
+        ],
       },
     };
   },
@@ -38,25 +46,23 @@ export default {
     id: 0,
   },
   mounted() {
-    const self = this;
-
-    this.userData.name = "tralala"
-    console.log(this.userData)
 
     fetch(`https://jsonplaceholder.typicode.com/posts/${this.id}`)
       .then((response) => response.json())
       .then((json) => {
-        this.placeholder = json;
-        console.log(self.metaInfo);
+        console.log(json)
 
-        self.metaInfo.title = this.placeholder.name;
+        this.placeholder = json;
+        this.metaTag.title = this.placeholder.title;
+        this.metaTag.author = "João Antonio Gardin Vieira"
+        this.metaTag.description = "Essa é uma descrição longa da pagina que vai ser exibida";
+        
+        this.metaTag.meta.push({
+          property: 'og:type',
+          content: 'article'
+        });
       })
       .catch((err) => console.log(err));
-
-    this.cssTexts.push({
-      vmid: "page-load-overlay",
-      innerHTML: null,
-    });
   },
 };
 </script>
