@@ -7,6 +7,18 @@ use Inertia\Inertia;
 
 class PostsController extends Controller
 {
+    public function index() {
+        $posts = \App\Post::all()->toArray();
+
+        $event = new \App\Event();
+        $event->description = "listagem das postagems";
+
+        return Inertia::render('Posts/Index', [
+            'posts' => $posts,
+            'event' => $event
+        ]);
+    }
+
     public function key($id) {
 
         $post = \App\Post::findOrFail($id);

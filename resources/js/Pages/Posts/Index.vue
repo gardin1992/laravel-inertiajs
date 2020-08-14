@@ -1,13 +1,5 @@
 <template>
-  <main-layout title="Welcome">
-
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Contador</h5>
-          <contador />
-        </div>
-      </div>
-
+  <main-layout title="Postagens">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Postagens</h5>
@@ -51,12 +43,7 @@ const components = {
 
 export default {
   metaInfo: {
-    title: "Home",
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "olhala", content: "Olha só, bunito." },
-    ],
+    title: "Postagens",
   },
   components,
   props: {
