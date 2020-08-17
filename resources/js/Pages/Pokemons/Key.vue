@@ -96,8 +96,13 @@ export default {
         this.weight = json.weight;
 
         this.updateMetatag();
+        const q = document.querySelector('[property="og:title"]')
 
-        console.log(this)
+        if (!!q)
+          q.setAttribute('content', this.metaTag.title)
+
+        console.log('q', q)
+
       })
       .catch((err) => console.log(err));
   },
