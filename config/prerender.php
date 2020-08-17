@@ -25,7 +25,7 @@
 |
 */
 
-'prerender_url' => env('PRERENDER_URL', 'https://laravel-inertiajs-prerender.herokuapp.com/'),
+'prerender_url' => env('PRERENDER_URL', 'https://service.prerender.io/'),
 
 
 /*

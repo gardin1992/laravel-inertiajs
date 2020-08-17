@@ -68,38 +68,25 @@ export default {
   data() {
     return {
       userData: {
-        name: ''
+        name: '',
+        tagline: '',
+        profileurl: '',
       },
       id: 0,
       name: "",
       height: 0,
       weight: 0,
-      metaTag: {
-        url: "",
-        title: "",
-        description: "",
-        image: "",
-        type: "",
-        author: "",
-        site_name: "",
-      },
     };
   },
   components,
   props: {},
   methods: {
-    updateMetatag() {
-      this.metaTag.title = this.name;
-      this.metaTag.author = "João Antonio Gardin Vieira";
-      this.metaTag.description =
-        "Essa é uma descrição longa da pagina que vai ser exibida";
-      this.metaTag.image = this.getUrl();
-    },
     getUrl() {
       return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.id}.png`;
     },
   },
   mounted() {
+
     fetch(`https://pokeapi.co/api/v2/pokemon/${this.id}`)
       .then((response) => response.json())
       .then((json) => {
@@ -109,11 +96,13 @@ export default {
         this.weight = json.weight;
 
         this.userData.name = json.name;
+        this.userData.tagline = 'taglinte,teste'
+        this.userData.profileurl = 'gardin1992'
 
         const q = document.querySelector('[property="og:title"]');
         if (!!q) q.setAttribute("content", this.metaTag.title);
 
-        console.log(this.userData.name)
+        console.log(this.userData)
 
         window.prerenderReady = true
       })
