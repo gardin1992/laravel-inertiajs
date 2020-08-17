@@ -21,31 +21,6 @@ Vue.use(VueMeta)
 let app = document.getElementById('app')
 
 new Vue({
-  metaInfo() {
-    return {
-      title: 'Testando InertiaJS',
-      titleTemplate: (title) => title ? `${title} - Testando InertiaJS` : 'Testando InertiaJS',
-      meta: [
-        { name: 'description', content: 'Testando e implemtando SPA com InertiaJS, Vue e Laravel.' },
-        { name: 'robots', content: 'index,follow' },
-        { name: 'image', content: '' },
-
-        // facebook
-        { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: "Testando InertiaJS" },
-        { property: 'og:description', content: "Testando InertiaJS" },
-        { property: 'og:image', content: "" },
-        { property: 'og:url', content: "Testando InertiaJS" },
-        { property: 'og:site_name', content: 'Testando InertiaJS' },
-
-        // twitter
-        { name: 'twitter:url', content: 'website' },
-        { name: 'twitter:title', content: "Testando InertiaJS" },
-        { name: 'twitter:description', content: "Testando InertiaJS" },
-        { name: 'twitter:image', content: "" },
-      ]
-    }
-  },
   render: h => h(InertiaApp, {
     props: {
       initialPage: JSON.parse(app.dataset.page),

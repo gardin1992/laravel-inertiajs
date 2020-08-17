@@ -47,6 +47,11 @@ export default {
     };
   },
   data() {
+    /*
+    meta: [
+      { 'property': 'og:description', 'content': 'Wow', 'vmid': 'og:description'}
+    ]
+    */
     return {
       metaTag: {
         type: "article",
