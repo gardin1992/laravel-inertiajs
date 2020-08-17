@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <inertia-link class="navbar-brand" href="/" >Testando InertiaJS</inertia-link>
+    <inertia-link class="navbar-brand" href="/" >InertiaJS Pokemon</inertia-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -22,16 +22,7 @@
           </inertia-link>
         </li>
         <li class="nav-item">
-          <inertia-link class="nav-link" href="/contador">Contador</inertia-link>
-        </li>
-        <li class="nav-item">
           <inertia-link class="nav-link" href="/pokemons">Pokemons</inertia-link>
-        </li>
-        <li class="nav-item">
-          <inertia-link class="nav-link" href="/posts">Postagens</inertia-link>
-        </li>
-        <li class="nav-item">
-          <inertia-link class="nav-link" href="/placeholders">Placeholders</inertia-link>
         </li>
         <li class="nav-item dropdown">
           <a

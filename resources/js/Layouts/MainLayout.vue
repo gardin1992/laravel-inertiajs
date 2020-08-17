@@ -32,8 +32,5 @@ export default {
       },
     },
   },
-  mounted() {
-    console.log("construiu");
-  },
 };
 </script>

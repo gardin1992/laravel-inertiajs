@@ -13,9 +13,13 @@ import { pokemon_getId, pokemon_getUrlImage } from "@/Utils/index";
 
 export default {
   props: {
-    id: 0,
     name: String,
     url: String,
+  },
+  data() {
+    return {
+      id: 0,
+    };
   },
   methods: {
     getUrl(url) {

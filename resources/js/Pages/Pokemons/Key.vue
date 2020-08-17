@@ -5,7 +5,7 @@
 
       <div class="pk_container">
         <div class="pk_imagem">
-          <img :src="this.getUrl()" class="card-img-top" alt="..." />
+          <img :src="this.getUrl()" class="img-thumbnail" alt="..." />
         </div>
         <div class="pk_stats">
           <span>height: {{ height}}</span>
@@ -55,6 +55,10 @@ export default {
   },
   data() {
     return {
+      id: 0,
+      name: "",
+      height: 0,
+      weight: 0,
       metaTag: {
         url: "",
         title: "",
@@ -67,12 +71,7 @@ export default {
     };
   },
   components,
-  props: {
-    id: 0,
-    name: "",
-    height: 0,
-    weight: 0,
-  },
+  props: {},
   methods: {
     updateMetatag() {
       this.metaTag.title = this.name;
@@ -86,7 +85,6 @@ export default {
     },
   },
   mounted() {
-
     fetch(`https://pokeapi.co/api/v2/pokemon/${this.id}`)
       .then((response) => response.json())
       .then((json) => {
@@ -96,13 +94,9 @@ export default {
         this.weight = json.weight;
 
         this.updateMetatag();
-        const q = document.querySelector('[property="og:title"]')
 
-        if (!!q)
-          q.setAttribute('content', this.metaTag.title)
-
-        console.log('q', q)
-
+        const q = document.querySelector('[property="og:title"]');
+        if (!!q) q.setAttribute("content", this.metaTag.title);
       })
       .catch((err) => console.log(err));
   },

@@ -27,8 +27,10 @@ export default {
     title: "Pokemons",
   },
   components,
-  props: {
-    pokemons: [],
+  data() {
+    return {
+      pokemons: [],
+    }
   },
   mounted() {
     const apiUrl = `https://pokeapi.co/api/v2/pokemon`;
@@ -37,8 +39,6 @@ export default {
       .then((response) => response.json())
       .then((json) => {
         this.pokemons = json.results;
-
-        console.log(this.pokemons);
       });
   },
   methods: {

@@ -20,10 +20,7 @@
               <inertia-link
                 class="px-6 py-4 flex items-center focus:text-indigo-500"
                 :href="'/posts/' + user.id"
-              >
-                <icon v-if="user.id" name="trash" class="flex-shrink-0 w-3 h-3 fill-gray-400 ml-2" />
-                {{user.id}} - {{user.title }}
-              </inertia-link>
+              >{{user.id}} - {{user.title }}</inertia-link>
             </td>
           </tr>
         </ul>
@@ -44,7 +41,6 @@
                 class="px-6 py-4 flex items-center focus:text-indigo-500"
                 :href="'/posts/' + user.id"
               >
-                <icon v-if="user.id" name="trash" class="flex-shrink-0 w-3 h-3 fill-gray-400 ml-2" />
                 {{user.id}} - {{user.title }}
               </inertia-link>
             </td>
@@ -72,27 +68,21 @@ export default {
   },
   components,
   props: {
-    posts: [],
-    event: [],
-    placeholders: [],
+    posts: Array,
+    event: Object,
   },
-  created() {
-    console.log("criado");
+  data() {
+    return {
+      placeholders: Array,
+    };
   },
   mounted() {
-    console.log("mounted");
 
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
       .then((json) => {
         this.placeholders = json;
       });
-  },
-  updated() {
-    console.log("updated");
-  },
-  destroyed() {
-    console.log("destroyed");
   },
 };
 </script>
