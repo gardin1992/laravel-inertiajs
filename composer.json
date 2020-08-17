@@ -25,6 +25,7 @@
         "nunomaduro/collision": "^4.1",
         "phpunit/phpunit": "^8.5",
         "reinink/remember-query-strings": "^0.1.0",
+        "symfony/psr-http-message-bridge": "^2.0",
         "tightenco/ziggy": "^0.8.0"
     },
     "config": {
