@@ -6,9 +6,7 @@
         <small>{{ placeholder.userId }}</small>
       </div>
 
-      <img
-        src="https://via.placeholder.com/600x315"
-      />
+      <img src="https://via.placeholder.com/600x315" />
       <div>{{ placeholder.body}}</div>
       {{placeholder.id}}
     </div>
@@ -23,43 +21,69 @@ const components = {
 };
 
 export default {
+  beforeMount() {
+    // recuperar o id que sera usado para o request do placeholder
+    const { slug } = this.$route.params
+    console.log('slug', slug)
+  },
   metaInfo() {
     return {
       title: this.metaTag.title,
-      titleTemplate: (title) => title ? `${title} - Testando InertiaJS` : 'Testando InertiaJS',
+      titleTemplate: (title) =>
+        title ? `${title} - Testando InertiaJS` : "Testando InertiaJS",
       meta: [
-        { name: 'description', content: this.metaTag.description },
-        { name: 'image', content: this.metaTag.image },
+        {
+          vmid: "description",
+          name: "description",
+          content: this.metaTag.description,
+        },
+        { vmid: "image", name: "image", content: this.metaTag.image },
         // facebook
-        { property: 'og:type', content: this.metaTag.type },
-        { property: 'og:title', content: this.metaTag.title },
-        { property: 'og:description', content: this.metaTag.description },
-        { property: 'og:image', content: this.metaTag.image },
-        { property: 'og:url', content: this.metaTag.url },
-        { property: 'og:site_name', content: this.metaTag.site_name },
+        { vmid: "og:type", property: "og:type", content: this.metaTag.type },
+        { vmid: "og:title", property: "og:title", content: this.metaTag.title },
+        {
+          vmid: "og:description",
+          property: "og:description",
+          content: this.metaTag.description,
+        },
+        { vmid: "og:image", property: "og:image", content: this.metaTag.image },
+        { vmid: "og:url", property: "og:url", content: this.metaTag.url },
+        {
+          vmid: "og:site_name",
+          property: "og:site_name",
+          content: this.metaTag.site_name,
+        },
 
         // twitter
-        { name: 'twitter:url', content: this.metaTag.url },
-        { name: 'twitter:title', content: this.metaTag.title },
-        { name: 'twitter:description', content: this.metaTag.description },
-        { name: 'twitter:image', content: this.metaTag.image },
-      ]
+        { vmid: "twitter:url", name: "twitter:url", content: this.metaTag.url },
+        {
+          vmid: "twitter:title",
+          name: "twitter:title",
+          content: this.metaTag.title,
+        },
+        {
+          vmid: "twitter:description",
+          name: "twitter:description",
+          content: this.metaTag.description,
+        },
+        {
+          vmid: "twitter:image",
+          name: "twitter:image",
+          content: this.metaTag.image,
+        },
+      ],
     };
   },
   data() {
-    /*
-    meta: [
-      { 'property': 'og:description', 'content': 'Wow', 'vmid': 'og:description'}
-    ]
-    */
     return {
       metaTag: {
-        type: "article",
+        url: "",
         title: "",
         description: "",
         image: "",
-        url: "",
-        site_name: "",
+        type: "",
+        author: "",
+        site_name: ""
       },
     };
   },
@@ -68,6 +92,14 @@ export default {
     placeholder: {},
     event: [],
     id: 0,
+    metaTag: {
+      type: "article",
+      title: "",
+      description: "",
+      image: "",
+      url: "",
+      site_name: "",
+    },
   },
   mounted() {
     fetch(`https://jsonplaceholder.typicode.com/posts/${this.id}`)
@@ -80,7 +112,7 @@ export default {
           "Essa é uma descrição longa da pagina que vai ser exibida";
         this.metaTag.image = "https://via.placeholder.com/600x315";
 
-        console.log('terminou')
+        console.log("terminou", this.metaTag);
       })
       .catch((err) => console.log(err));
   },

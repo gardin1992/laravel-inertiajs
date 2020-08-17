@@ -25,6 +25,9 @@
           <inertia-link class="nav-link" href="/contador">Contador</inertia-link>
         </li>
         <li class="nav-item">
+          <inertia-link class="nav-link" href="/pokemons">Pokemons</inertia-link>
+        </li>
+        <li class="nav-item">
           <inertia-link class="nav-link" href="/posts">Postagens</inertia-link>
         </li>
         <li class="nav-item">
