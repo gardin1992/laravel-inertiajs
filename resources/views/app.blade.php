@@ -7,24 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 
-    {{-- Inertia --}}
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=smoothscroll,NodeList.prototype.forEach,Promise,Object.values,Object.assign" defer></script>
-
-    {{-- Ping CRM --}}
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.startsWith" defer></script>
-
-    <script src="{{ mix('/js/app.js') }}" defer></script>
     <title>Testando InertiaJS</title>
 
-    <?php
-    /*
     @if(isset($page['props']['event']))
-
-    <meta name="description" content="{{ $page['props']['event']->description }}" />
-    <meta name="keywords" content="{{ $page['props']['event']->keywords }}" />
-    <meta name="robots" content="all" />
-    <meta name="language" content="{{ $page['props']['event']->language }}" />
     <meta name="author" content="{{ $page['props']['event']->author }}" />
+    <meta name="keywords" content="{{ $page['props']['event']->keywords }}" />
+    <meta name="description" content="{{ $page['props']['event']->description }}" />
 
     <meta property="og:type" content="{{ $page['props']['event']->type }}" />
     <meta property="og:title" content="{{ $page['props']['event']->title }}" />
@@ -37,9 +25,31 @@
     <meta name="twitter:title" content="{{ $page['props']['event']->title }}">
     <meta name="twitter:description" content="{{ $page['props']['event']->description }}">
     <meta name="twitter:image" content="{{ $page['props']['event']->image }}">
+    @else
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+
+    <meta property="og:type" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
     @endif
-    */ 
-    ?>
+
+    {{-- Inertia --}}
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=smoothscroll,NodeList.prototype.forEach,Promise,Object.values,Object.assign" defer></script>
+
+    {{-- Ping CRM --}}
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.startsWith" defer></script>
+
+    <script src="{{ mix('/js/app.js') }}" defer></script>
     @routes
 </head>
 

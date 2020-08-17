@@ -26,20 +26,35 @@ export default {
   metaInfo() {
     return {
       title: this.metaTag.title,
+      titleTemplate: (title) => title ? `${title} - Testando InertiaJS` : 'Testando InertiaJS',
+      meta: [
+        { name: 'description', content: this.metaTag.description },
+        { name: 'image', content: this.metaTag.image },
+        // facebook
+        { property: 'og:type', content: this.metaTag.type },
+        { property: 'og:title', content: title },
+        { property: 'og:description', content: this.metaTag.description },
+        { property: 'og:image', content: this.metaTag.image },
+        { property: 'og:url', content: this.metaTag.url },
+        { property: 'og:site_name', content: this.metaTag.site_name },
+
+        // twitter
+        { name: 'twitter:url', content: this.metaTag.url },
+        { name: 'twitter:title', content: this.metaTag.title },
+        { name: 'twitter:description', content: this.metaTag.description },
+        { name: 'twitter:image', content: this.metaTag.image },
+      ]
     };
   },
   data() {
     return {
       metaTag: {
+        type: "article",
         title: "",
         description: "",
         image: "",
         url: "",
         site_name: "",
-        meta: [
-          { charset: "utf-8" },
-          { name: "viewport", content: "width=device-width, initial-scale=1" },
-        ],
       },
     };
   },
@@ -53,25 +68,12 @@ export default {
     fetch(`https://jsonplaceholder.typicode.com/posts/${this.id}`)
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
-
         this.placeholder = json;
         this.metaTag.title = this.placeholder.title;
         this.metaTag.author = "João Antonio Gardin Vieira";
         this.metaTag.description =
           "Essa é uma descrição longa da pagina que vai ser exibida";
-
         this.metaTag.image = "https://via.placeholder.com/600x315";
-
-        this.metaTag.meta.push({ property: "og:image", content: this.metaTag.image });
-        this.metaTag.meta.push({ name: 'twitter:image', content: this.metaTag.image });
-
-        var a = this.metaTag.meta.find(a => a.name == 'twitter:image');
-        console.log(a)
-
-        this.metaTag.meta.push({ property: "og:image:width", content: "600" });
-        this.metaTag.meta.push({ property: "og:image:height", content: "315" });
-        this.metaTag.meta.push({ property: "og:type", content: "article" });
       })
       .catch((err) => console.log(err));
   },
