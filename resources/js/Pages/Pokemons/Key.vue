@@ -112,6 +112,10 @@ export default {
 
         const q = document.querySelector('[property="og:title"]');
         if (!!q) q.setAttribute("content", this.metaTag.title);
+
+        console.log(this.userData.name)
+
+        window.prerenderReady = true
       })
       .catch((err) => console.log(err));
   },

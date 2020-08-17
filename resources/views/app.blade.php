@@ -28,12 +28,16 @@
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=smoothscroll,NodeList.prototype.forEach,Promise,Object.values,Object.assign" defer></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.startsWith" defer></script>
-    
+
     <script src="{{ mix('/js/app.js') }}" defer></script>
     @routes
 </head>
 
 <body class="font-sans leading-none text-gray-700 antialiased">
     @inertia
+
+    <script>
+        window.prerenderReady = false;
+    </script>
 </body>
 </html>
