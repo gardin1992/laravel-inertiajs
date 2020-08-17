@@ -97,7 +97,13 @@ export default {
 
         this.updateMetatag();
 
-        console.log(this)
+        const q = document.querySelector('[property="og:title"]')
+
+        if (!!q)
+          q.setAttribute('content', this.metaTag.title)
+
+        console.log('q', q)
+
       })
       .catch((err) => console.log(err));
   },
