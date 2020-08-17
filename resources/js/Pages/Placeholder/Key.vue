@@ -32,7 +32,7 @@ export default {
         { name: 'image', content: this.metaTag.image },
         // facebook
         { property: 'og:type', content: this.metaTag.type },
-        { property: 'og:title', content: title },
+        { property: 'og:title', content: this.metaTag.title },
         { property: 'og:description', content: this.metaTag.description },
         { property: 'og:image', content: this.metaTag.image },
         { property: 'og:url', content: this.metaTag.url },
@@ -60,7 +60,7 @@ export default {
   },
   components,
   props: {
-    placeholder: Object,
+    placeholder: {},
     event: [],
     id: 0,
   },
@@ -74,6 +74,8 @@ export default {
         this.metaTag.description =
           "Essa é uma descrição longa da pagina que vai ser exibida";
         this.metaTag.image = "https://via.placeholder.com/600x315";
+
+        console.log('terminou')
       })
       .catch((err) => console.log(err));
   },
