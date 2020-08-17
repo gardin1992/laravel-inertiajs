@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 
-    <title>Testando InertiaJS</title>
-
     @if(isset($page['props']['event']))
+    <title>Testando InertiaJS</title>
     <meta name="author" content="{{ $page['props']['event']->author }}" />
     <meta name="keywords" content="{{ $page['props']['event']->keywords }}" />
     <meta name="description" content="{{ $page['props']['event']->description }}" />
@@ -25,22 +24,6 @@
     <meta name="twitter:title" content="{{ $page['props']['event']->title }}">
     <meta name="twitter:description" content="{{ $page['props']['event']->description }}">
     <meta name="twitter:image" content="{{ $page['props']['event']->image }}">
-    @else
-    <meta name="author" content="" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-
-    <meta property="og:type" content="" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-
-    <meta name="twitter:url" content="">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="">
     @endif
 
     {{-- Inertia --}}
