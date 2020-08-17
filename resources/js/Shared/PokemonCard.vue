@@ -28,6 +28,7 @@ export default {
   },
   mounted() {
     this.id = pokemon_getId(this.url);
+    const a = 'tralala'
   },
 };
 </script>
