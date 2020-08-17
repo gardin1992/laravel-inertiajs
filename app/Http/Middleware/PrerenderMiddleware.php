@@ -200,13 +200,18 @@ class PrerenderMiddleware
 
         try {
             // Return the Guzzle Response
-            $host = $request->getHost();
+            // $host = $request->getHost();
             $path = $request->Path();
+            $host = $request->getHttpHost();
+
             // Fix "//" 404 error
             if ($path == "/") {
                 $path = "";
             }
-            return $this->client->get($this->prerenderUri . '/' . urlencode($protocol . '://' . $host . '/' . $path), compact('headers'));
+
+            //  urlencode($protocol . '://' . $host . '/' . $path)
+
+            return $this->client->get($this->prerenderUri . '/' . $protocol . '://' . $host . '/' . $path, compact('headers'));
         } catch (RequestException $exception) {
             if (!$this->returnSoftHttpCodes && !empty($exception->getResponse()) && $exception->getResponse()->getStatusCode() == 404) {
                 \App::abort(404);
