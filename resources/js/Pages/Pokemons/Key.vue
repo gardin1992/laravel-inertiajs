@@ -32,29 +32,44 @@ export default {
   },
   metaInfo() {
     return {
-      title: this.metaTag.title,
-      titleTemplate: (title) =>
-        title ? `${title} - Testando InertiaJS` : "Testando InertiaJS",
+      title: `${this.userData.name} - Epiloge`,
       meta: [
         {
-          vmid: "description",
           name: "description",
-          content: this.metaTag.description,
+          content:
+            "Connect and follow " +
+            this.userData.name +
+            " on Epiloge - " +
+            this.userData.tagline,
         },
-        { vmid: "image", name: "image", content: this.metaTag.image },
-        // facebook
-        { vmid: "og:title", property: "og:title", content: this.metaTag.title },
+        { property: "og:title", content: this.userData.name + " - Epiloge" },
+        { property: "og:site_name", content: "Epiloge" },
         {
-          vmid: "og:description",
           property: "og:description",
-          content: this.metaTag.description,
+          content:
+            "Connect and follow " +
+            this.userData.name +
+            " on Epiloge - " +
+            this.userData.tagline,
         },
-        { vmid: "og:image", property: "og:image", content: this.metaTag.image },
+        { property: "og:type", content: "profile" },
+        {
+          property: "og:url",
+          content: "https://epiloge.com/@" + this.userData.username,
+        },
+        {
+          property: "og:image",
+          content:
+            this.aws_url + "/users/" + this.userData.profileurl + "-main.jpg",
+        },
       ],
     };
   },
   data() {
     return {
+      userData: {
+        name: ''
+      },
       id: 0,
       name: "",
       height: 0,
@@ -93,7 +108,7 @@ export default {
         this.height = json.height;
         this.weight = json.weight;
 
-        this.updateMetatag();
+        this.userData.name = json.name;
 
         const q = document.querySelector('[property="og:title"]');
         if (!!q) q.setAttribute("content", this.metaTag.title);
