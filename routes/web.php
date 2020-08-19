@@ -27,3 +27,6 @@ Route::get('/placeholders/{id}')->name('placeholders.key')->uses('PlaceholdersCo
 
 Route::get('/pokemons')->name('pokemons.index')->uses('PokemonsController@index');
 Route::get('/pokemons/{id}')->name('pokemons.key')->uses('PokemonsController@key');
+
+Route::get('/imoveis')->name('imoveis.index')->uses('ImoveisController@index');
+Route::get('/imoveis/{id}')->name('imoveis.key')->uses('ImoveisController@key');
