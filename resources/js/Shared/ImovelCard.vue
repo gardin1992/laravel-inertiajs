@@ -7,7 +7,18 @@
       <div class="tipo">{{ this.tipo_mae }} - {{ this.tipo_imovel }} - {{ this.bairro_nome }}</div>
       <div class="titulo">{{ this.bairro_nome }}</div>
       <div class="localizacao">{{ this.cidade }} - {{ this.estado}}</div>
-      <div class="destaques">{{ `destaques`}}</div>
+      <div class="destaques">
+        <div v-if="!!this.suites">
+          Suites {{this.suites}}
+        </div>
+        <div v-if="!!this.dormitorios">
+          dormitorios {{this.dormitorios}}
+        </div>
+        <div v-if="!!this.garagem">
+          garagem {{this.garagem}}
+          <small>{{ this.garagem_tipo}}</small>
+        </div>
+      </div>
       <div class="valor">
         <div v-if="!!this.valor_antigo">
           Venda de
