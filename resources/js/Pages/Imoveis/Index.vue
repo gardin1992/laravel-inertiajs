@@ -2,12 +2,12 @@
   <main-layout title="Imoveis">
     <div class="row">
       <div class="col-3" v-for="imovel in imoveis" :key="imovel.id">
-        <inertia-link
-          class="px-6 py-4 flex items-center focus:text-indigo-500"
-          :href="'/imoveis/'"
-        >
+        <inertia-link class="px-6 py-4 flex items-center focus:text-indigo-500" :href="'/imoveis/'">
           <imovel-card v-bind="{...imovel}"></imovel-card>
         </inertia-link>
+      </div>
+      <div class="col-3" v-for="imovel in imoveis" :key="imovel.id">
+        <lancamento-card v-bind="{...imovel}"></lancamento-card>
       </div>
     </div>
   </main-layout>
@@ -16,10 +16,12 @@
 <script>
 import MainLayout from "@/Layouts/MainLayout";
 import ImovelCard from "@/Shared/ImovelCard";
+import LancamentoCard from "@/Shared/LancamentoCard";
 
 const components = {
   MainLayout,
   ImovelCard,
+  LancamentoCard,
 };
 
 const imoveis = [];
