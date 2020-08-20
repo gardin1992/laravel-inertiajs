@@ -5,7 +5,13 @@
     <meta name="google-site-verification" content="YaB_jTNZLF2t2QpnlxClsRe4wPNErPKLIck4NzGXtqE" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+
+    @if( env('APP_ENV') == 'local')
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+    @else
+    <link href="https://cdn.jsdelivr.net/gh/gardin1992/laravel-inertiajs/public/css/app.css" rel="stylesheet">
+    @endif
 
     @if(isset($page['props']['event']))
     <title>Testando InertiaJS</title>
@@ -26,10 +32,16 @@
     <meta name="twitter:image" content="{{ $page['props']['event']->image }}">
     @endif
 
+
     <script src="https://polyfill.io/v3/polyfill.min.js?features=smoothscroll,NodeList.prototype.forEach,Promise,Object.values,Object.assign" defer></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.startsWith" defer></script>
 
+    @if( env('APP_ENV') == 'local')
     <script src="{{ mix('/js/app.js') }}" defer></script>
+    @else
+    <script src="https://cdn.jsdelivr.net/gh/gardin1992/laravel-inertiajs/public/js/app.js" defer></script>
+    @endif
+
     @routes
 </head>
 
@@ -40,4 +52,5 @@
         window.prerenderReady = false;
     </script>
 </body>
+
 </html>

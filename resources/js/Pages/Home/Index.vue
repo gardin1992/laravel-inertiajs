@@ -1,65 +1,33 @@
 <template>
   <main-layout title="Home">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Contador</h5>
-        <contador />
-      </div>
+    <div class="jumbotron">
+      <h1 class="display-4">Hello, world!</h1>
+      <p
+        class="lead"
+      >This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <hr class="my-4" />
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
 
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Postagens</h5>
-        <ul id="example-1">
-          <tr
-            v-for="user in posts"
-            :key="user.id"
-            class="hover:bg-gray-100 focus-within:bg-gray-100"
-          >
-            <td class="border-t">
-              <inertia-link
-                class="px-6 py-4 flex items-center focus:text-indigo-500"
-                :href="'/posts/' + user.id"
-              >{{user.id}} - {{user.title }}</inertia-link>
-            </td>
-          </tr>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Placeholder</h5>
-        <ul id="example-1">
-          <tr
-            v-for="user in placeholders"
-            :key="user.id"
-            class="hover:bg-gray-100 focus-within:bg-gray-100"
-          >
-            <td class="border-t">
-              <inertia-link
-                class="px-6 py-4 flex items-center focus:text-indigo-500"
-                :href="'/posts/' + user.id"
-              >
-                {{user.id}} - {{user.title }}
-              </inertia-link>
-            </td>
-          </tr>
-        </ul>
-      </div>
-    </div>
+    <section-empreendimentos />
+    <section-alugar-rapido />
   </main-layout>
 </template>
 
 <script>
-import Contador from "@/Shared/Contador";
-import Navbar from "@/Shared/Navbar";
 import MainLayout from "@/Layouts/MainLayout";
+
+import Navbar from "@/Shared/Navbar";
+import Carousel from "@/Shared/Carousel/Carousel";
+import SectionEmpreendimentos from '@/components/SectionEmpreendimentos';
+import SectionAlugarRapido from '@/components/SectionAlugarRapido';
 
 const components = {
   Navbar,
-  Contador,
   MainLayout,
+  SectionEmpreendimentos,
+  SectionAlugarRapido
 };
 
 export default {
@@ -68,21 +36,13 @@ export default {
   },
   components,
   props: {
-    posts: Array,
-    event: Object,
   },
   data() {
     return {
-      placeholders: Array,
     };
   },
   mounted() {
-
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => response.json())
-      .then((json) => {
-        this.placeholders = json;
-      });
+    
   },
 };
 </script>
