@@ -36,10 +36,12 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=smoothscroll,NodeList.prototype.forEach,Promise,Object.values,Object.assign" defer></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.startsWith" defer></script>
 
-    @if( env('APP_ENV') == 'local')
     <script src="{{ mix('/js/app.js') }}" defer></script>
+
+    @if( env('APP_ENV') == 'local')
+    <!-- <script src="{{ mix('/js/app.js') }}" defer></script> -->
     @else
-    <script src="https://cdn.jsdelivr.net/gh/gardin1992/laravel-inertiajs/public/js/app.js" defer></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/gardin1992/laravel-inertiajs/public/js/app.js" defer></script> -->
     @endif
 
     @routes
